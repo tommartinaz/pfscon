@@ -1,0 +1,13 @@
+export const EMAIL_CHANGED = 'email_changed';
+export const PASSWORD_CHANGED = 'password_changed';
+export const LOGIN_USER_SUCCESS = 'login_user_sucess';
+export const LOGIN_USER_FAIL = 'login_user_fail';
+export const LOGIN_USER = 'login_user';
+export const LOGOUT = 'logout';
+export const FETCH_SCENARIOS = 'fetch_scenarios';
+export const FETCH_SCENARIOS_SUCCESS = 'fetch_scenarios_success';
+export const FETCH_SCENARIOS_FAIL = 'fetch_scenarios_fail';
+export const SELECT_SCENARIO = 'select_scenario';
+export const FETCH_SLOTS = 'fetch_slots';
+export const FETCH_SLOTS_SUCCESS = 'fetch_slots_success';
+export const SELECT_SLOT = 'select_slot';
