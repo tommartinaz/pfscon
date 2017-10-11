@@ -5,6 +5,7 @@ var router = express.Router();
 router.get('/', (req, res) => {
     knex('scenarios')
         .select()
+        .orderBy('id')
         .then(scenarios => res.send(scenarios));
 });
 

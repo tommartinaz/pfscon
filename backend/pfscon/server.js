@@ -8,6 +8,7 @@ var knex = require('./db/knex');
 var scenarios = require('./routes/scenarios');
 var tables = require('./routes/tables');
 var vendors = require('./routes/vendors');
+var slots = require('./routes/slots');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.get('/', function(req, res) {
 app.use('/scenarios', scenarios);
 app.use('/tables', tables);
 app.use('/vendors', vendors);
+app.use('/slots', slots);
 
 app.listen(port, function() {
 console.log("listening on port: ", port);

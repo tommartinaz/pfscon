@@ -10,18 +10,11 @@ export const fetchSlots = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_SLOTS });
 
-    axios.get('http://localhost:8000/tables')
+    axios.get('http://localhost:8000/slots')
       .then(data => fetchSlotsSuccess(dispatch, data))
       .catch(() => fetchSlotsFail(dispatch))
   };
 };
-
-const selectSlot = id => {
-  return {
-    type: SELECT_SLOT,
-    payload: id
-  }
-}
 
 const fetchSlotsSuccess = (dispatch, scenario) => {
   dispatch({
@@ -35,3 +28,10 @@ const fetchSlotsFail = (dispatch) => {
     type: FETCH_SLOTS_FAIL
   });
 };
+
+export const selectSlot = id => {
+  return {
+    type: SELECT_SLOT,
+    payload: id
+  }
+}

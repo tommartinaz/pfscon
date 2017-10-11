@@ -15,6 +15,11 @@ exports.seed = function(knex, Promise) {
         {table_id: 8, scenario_id: 13},
         {table_id: 9, scenario_id: 22},
         {table_id: 10, scenario_id: 26},
+        {table_id: 11, scenario_id: 4},
+        {table_id: 12, scenario_id: 5},
+        {table_id: 13, scenario_id: 18},
+        {table_id: 14, scenario_id: 10},
+        {table_id: 15, scenario_id: 12},
       ]);
     });
 };

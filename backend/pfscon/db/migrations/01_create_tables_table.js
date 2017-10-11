@@ -3,9 +3,6 @@ exports.up = function(knex, Promise) {
         table.increments();
         table.integer('table_num').notNullable();
         table.integer('slot');
-        table.date('date');
-        table.time('start_time');
-        table.time('end_time');
     })
 };
 

@@ -43,37 +43,6 @@ export const loginUser = ({ email, password }) => {
   };
 };
 
-
-export const fetchScenarios = () => {
-  return (dispatch) => {
-    dispatch({ type: FETCH_SCENARIOS });
-
-    axios.get('http://localhost:8000/scenarios')
-      .then(data => fetchScenariosSuccess(dispatch, data))
-      .catch(() => fetchScenariosFail(dispatch))
-  };
-};
-
-const fetchScenariosSuccess = (dispatch, scenario) => {
-  dispatch({
-    type: FETCH_SCENARIOS_SUCCESS,
-    payload: scenario
-  });
-};
-
-const fetchScenariosFail = (dispatch) => {
-  dispatch({
-    type: FETCH_SCENARIOS_FAIL
-  });
-};
-
-export const selectedScenarioId = (id) => {
-  return {
-    type: SELECT_SCENARIO,
-    payload: id
-  };
-};
-
 const loginUserFail = (dispatch) => {
   dispatch({ type: LOGIN_USER_FAIL });
 };

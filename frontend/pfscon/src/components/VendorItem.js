@@ -13,45 +13,25 @@ import { CardSection } from './common';
 import * as actions from '../actions/scenarioActions';
 //import DetailsScreen from './DetailsScreen';
 
-class ScenarioItem extends Component {
+class VendorItem extends Component {
 
   static navigationOptions = {
-    title: 'Scenario',
+    title: 'Vendors',
   }
-  // renderDescription() {
-  //   const { scenario, expanded } = this.props;
-  //   if (expanded) {
-  //     return (
-  //       <CardSection>
-  //         <Text style={{ flex: 1 }}>{scenario.description}</Text>
-  //       </CardSection>
-  //     );
-  //   }
-  // }
-
   render() {
     const { titleStyle } = styles;
-    const { id, season, scenario_num, title, actions } = this.props;
+    const { id, title, url } = this.props;
     return (
         <View>
           <CardSection>
             <Text style={titleStyle}>
-              #{season}-{scenario_num}: {title}
+              {title} - {url}
             </Text>
           </CardSection>
         </View>
     );
   }
 }
-
-// const ModalStack = StackNavigator({
-//     Home: {
-//       screen: ScenarioItem
-//     },
-//     Details: {
-//       screen: DetailsScreen
-//     }
-// });
 
 const styles = {
   titleStyle: {
@@ -64,10 +44,6 @@ const styles = {
   }
 };
 
-const mapStateToProps = (state, ownProps) => {
-  const expanded = state.selectedScenarioId === ownProps.id;
-  return { expanded };
-};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -75,4 +51,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScenarioItem);
+export default connect(null, mapDispatchToProps)(VendorItem);

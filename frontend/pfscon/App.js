@@ -8,10 +8,10 @@ import MyApp from './src/components/MyApp';
 
 class App extends Component {
   render() {
-    const store = createStore(reducers, {}, applyMiddleware(logger, ReduxThunk));
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
     return (
       <Provider store={store}>
-        <MyApp />
+        <MyApp style={{backgroundColor: '#41affa'}}/>
       </Provider>
     );
   }

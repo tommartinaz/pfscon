@@ -2,44 +2,43 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FlatList, Image, View, ListItem } from 'react-native';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/scenarioActions';
+import * as actions from '../actions/vendorActions';
 
-import ScenarioItem from './ScenarioItem';
+import VendorItem from './VendorItem';
 
-class ScenarioList extends Component {
+class VendorScreen extends Component {
   static navigationOptions = {
-    tabBarLabel: 'Scenarios',
+    tabBarLabel: 'Vendors',
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require('../../home-icon.png')}
+        source={require('../../vendors-icon.png')}
         style={[styles.icon, {tintColor: tintColor}]}
       />
     )
   };
 
   componentDidMount() {
-    console.log("SCENARIO_LIST_PROPS", this.props)
-    this.props.actions.fetchScenarios();
+    this.props.actions.fetchVendors();
   }
 
   _keyExtractor = (item, index) => item.id;
 
-  _renderItem = ({ item }) => (
-    <ScenarioItem
-      id={item.id}
-      key={item.id}
-      title={item.title}
-      season={item.season}
-      scenario_num={item.scenario_num}
-      description={item.description}
-    />
-  )
+  _renderItem = ({ item }) => {
+    console.log(item);
+    return (
+      <VendorItem
+        id={item.id}
+        title={item.name}
+        url={item.url}
+      />
+    )
+  }
 
   render() {
     return (
       <FlatList
         style={styles.contentStyle}
-        data={this.props.scenarios}
+        data={this.props.vendors}
         renderItem={this._renderItem}
         keyExtractor={this._keyExtractor}
       />
@@ -57,7 +56,7 @@ const styles = {
 };
 
 const mapStateToProps = state => {
-  return { scenarios: state.scenarios };
+  return { vendors: state.vendors };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -66,4 +65,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScenarioList);
+export default connect(mapStateToProps, mapDispatchToProps)(VendorScreen);

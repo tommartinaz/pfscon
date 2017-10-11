@@ -3,10 +3,8 @@ import { TabNavigator } from 'react-navigation';
 import HomeScreen from './HomeScreen';
 import Schedule from './Schedule';
 import ScenarioList from './ScenarioList';
-// import LoginForm from './LoginForm';
-
-//const dispHome = this.props.auth ? HomeScreen : LoginForm;
-// console.log(this);
+import VendorScreen from './VendorScreen';
+import MapScreen from './MapScreen'
 
 const MyApp = TabNavigator({
   // Login: {
@@ -15,12 +13,15 @@ const MyApp = TabNavigator({
   Home: {
     screen: HomeScreen,
   },
-  Scenario: {
-    screen: ScenarioList,
-  },
   Schedule: {
     screen: Schedule
   },
+  Vendors: {
+    screen: VendorScreen
+  },
+  Map: {
+    screen: MapScreen
+  }
 }, {
   tabBarPositions: 'bottom',
   animationEnabled: true,

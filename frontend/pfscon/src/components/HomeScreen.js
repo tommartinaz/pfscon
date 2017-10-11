@@ -6,10 +6,10 @@ import { Content } from 'native-base';
 class HomeScreen extends Component {
   static navigationOptions = {
     tabBarLabel: 'Home',
-    tabBarIcon: () => (
+    tabBarIcon: ({ tintColor }) => (
       <Image
         source={require('../../home-icon.png')}
-        style={styles.icon}
+        style={[styles.icon, {tintColor: tintColor}]}
       />
     )
   };
