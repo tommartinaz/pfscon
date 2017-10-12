@@ -16,7 +16,7 @@ class Schedule extends Component {
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require('../../cal-icon.png')}
+        source={require('../assets/img/cal-icon.png')}
         style={[styles.icon, {tintColor: tintColor}]}
       />
     )
@@ -25,20 +25,19 @@ class Schedule extends Component {
   componentDidMount() {
     this.props.actions.fetchSlots();
     this.props.actions.fetchScenariosSlot1();
-    this.props.actions.fetchScenariosSlot2();
-    this.props.actions.fetchScenariosSlot3();
   }
 
   _renderItem = ({ item }) => {
     const { id, slot_num, start_time, end_time } = item;
-    const sTime = Moment('2017-10-14', start_time).format('hh:mm a');
+    const sTime = Moment(start_time).format('h:mm a');
+    const eTime = Moment(end_time).format('h:mm a');
     console.log("TIME", sTime)
     return (
       <SlotTable
         id={id}
         title={slot_num}
         start_time={sTime}
-        end_time={end_time}
+        end_time={eTime}
         slot1={this.props.slot1}
         navigation={this.props.navigation}
       />
@@ -71,8 +70,6 @@ const mapStateToProps = state => {
   return {
     slots: state.slots,
     slot1: state.slot1,
-    slot2: state.slot2,
-    slot3: state.slot3
   };
 };
 

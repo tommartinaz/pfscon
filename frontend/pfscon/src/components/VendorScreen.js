@@ -12,7 +12,7 @@ class VendorScreen extends Component {
     tabBarLabel: 'Vendors',
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require('../../vendors-icon.png')}
+        source={require('../assets/img/vendors-icon.png')}
         style={[styles.icon, {tintColor: tintColor}]}
       />
     )

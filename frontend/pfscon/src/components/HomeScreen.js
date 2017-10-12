@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Image, Button, StyleSheet, View } from 'react-native';
-import { Content } from 'native-base';
+import { Image, Text, StyleSheet } from 'react-native';
+import { Container } from 'native-base';
 
 import { Header } from './common';
 
@@ -9,7 +9,7 @@ class HomeScreen extends Component {
     tabBarLabel: 'Home',
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require('../../home-icon.png')}
+        source={require('../assets/img/home-icon.png')}
         style={[styles.icon, {tintColor: tintColor}]}
       />
     )
@@ -17,9 +17,9 @@ class HomeScreen extends Component {
 
   render() {
     return (
-      <View>
+      <Image source={require('../assets/img/goblin.png')} style={styles.viewStyle}>
         <Header text='Welcome to PFSCon' />
-      </View>
+      </Image>
     );
   }
 }
@@ -29,8 +29,21 @@ const styles = StyleSheet.create({
     width: 26,
     height: 26
   },
-  contentStyle: {
-    paddingTop: 15
+  containerStyle: {
+    flex: 1,
+    justifyContent: 'flex-end'
+  },
+  textStyle: {
+    paddingTop: 400,
+    paddingRight: 10,
+    paddingLeft: 10,
+    backgroundColor: 'rgba(225, 225, 225, .0)',
+    color: '#F4AF2B',
+  },
+  viewStyle: {
+    flex: 1,
+    width: null,
+    height: null
   }
 });
 

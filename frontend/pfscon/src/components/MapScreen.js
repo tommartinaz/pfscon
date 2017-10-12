@@ -12,7 +12,7 @@ class MapScreen extends Component {
     tabBarLabel: 'Map',
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require('../../compass.png')}
+        source={require('../assets/img/compass.png')}
         style={[styles.icon, {tintColor: tintColor}]}
       />
     )
@@ -20,13 +20,12 @@ class MapScreen extends Component {
 
   render() {
   return (
-    <View style={{flex: 1}}>
+    <Image
+      source={require('../assets/img/map.png')}
+      style={styles.backgroundImage}
+    >
       <Header text='Facility Map' />
-      <Image
-        source={require('../../map.png')}
-        style={styles.backgroundImage}
-      />
-    </View>
+    </Image>
   )
 }
 }
@@ -37,8 +36,9 @@ const styles = StyleSheet.create({
     height: 26
   },
   backgroundImage: {
-    width: 400,
-    height: 500
+    flex: 1,
+    width: null,
+    height: null
   },
 })
 

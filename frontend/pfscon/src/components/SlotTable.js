@@ -65,7 +65,7 @@ const styles = {
     flex: 1,
     fontWeight: 'bold',
     paddingLeft: 15,
-    backgroundColor: '#41affa'
+    backgroundColor: '#cdc'
   },
   descriptionStyle: {
     flex: 1,
