@@ -27,6 +27,7 @@ class SlotTable extends Component {
               season={item.season}
               scenario_num={item.scenario_num}
               description={item.description}
+              navigation={this.props.navigation}
             />
           )}
           keyExtractor={(item, index) => item.id}
@@ -56,11 +57,12 @@ const styles = {
   },
   titleStyle: {
     fontSize: 22,
+    fontWeight: 'bold',
     paddingLeft: 15
   },
   descriptionStyle: {
     flex: 1,
-    paddingLeft: 18,
+    paddingLeft: 20,
     fontSize: 15
   }
 };

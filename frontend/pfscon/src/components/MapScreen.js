@@ -5,6 +5,7 @@ import {
   StyleSheet
 } from 'react-native';
 import { StackNavigator, ScrollView } from 'react-navigation';
+import { Header } from './common'
 
 class MapScreen extends Component {
   static navigationOptions = {
@@ -19,7 +20,8 @@ class MapScreen extends Component {
 
   render() {
   return (
-    <View>
+    <View style={{flex: 1}}>
+      <Header text='Facility Map' />
       <Image
         source={require('../../map.png')}
         style={styles.backgroundImage}
@@ -35,8 +37,8 @@ const styles = StyleSheet.create({
     height: 26
   },
   backgroundImage: {
-    flex: 1,
-    resizeMode: 'cover'
+    width: 400,
+    height: 500
   },
 })
 

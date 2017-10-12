@@ -15,24 +15,13 @@ import * as actions from '../actions/scenarioActions';
 
 class ScenarioItem extends Component {
 
-  static navigationOptions = {
-    title: 'Scenario',
-  }
-  // renderDescription() {
-  //   const { scenario, expanded } = this.props;
-  //   if (expanded) {
-  //     return (
-  //       <CardSection>
-  //         <Text style={{ flex: 1 }}>{scenario.description}</Text>
-  //       </CardSection>
-  //     );
-  //   }
-  // }
-
   render() {
     const { titleStyle } = styles;
     const { id, season, scenario_num, title, actions } = this.props;
     return (
+      <TouchableWithoutFeedback
+        onPress={() => this.props.navigation.navigate('Details', {description: this.props.description})}
+      >
         <View>
           <CardSection>
             <Text style={titleStyle}>
@@ -40,6 +29,7 @@ class ScenarioItem extends Component {
             </Text>
           </CardSection>
         </View>
+      </TouchableWithoutFeedback>
     );
   }
 }

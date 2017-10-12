@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Image, Button, StyleSheet, View } from 'react-native';
 import { Content } from 'native-base';
 
+import { Header } from './common';
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -17,11 +18,7 @@ class HomeScreen extends Component {
   render() {
     return (
       <View>
-        <Content style={styles.contentStyle} />
-        <Button
-          onPress={() => this.props.navigation.navigate('Schedule')}
-          title='Go to Schedule'
-        />
+        <Header text='Welcome to PFSCon' />
       </View>
     );
   }

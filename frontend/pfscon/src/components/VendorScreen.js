@@ -4,6 +4,7 @@ import { FlatList, Image, View, ListItem } from 'react-native';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/vendorActions';
 
+import { Header } from './common'
 import VendorItem from './VendorItem';
 
 class VendorScreen extends Component {
@@ -26,22 +27,27 @@ class VendorScreen extends Component {
   _renderItem = ({ item }) => {
     console.log(item);
     return (
+      <View>
       <VendorItem
         id={item.id}
         title={item.name}
         url={item.url}
       />
+      </View>
     )
   }
 
   render() {
     return (
+      <View>
+      <Header text='Vendors' />
       <FlatList
         style={styles.contentStyle}
         data={this.props.vendors}
         renderItem={this._renderItem}
         keyExtractor={this._keyExtractor}
       />
+      </View>
     );
   }
 }
