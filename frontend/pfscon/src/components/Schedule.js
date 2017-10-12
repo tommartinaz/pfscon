@@ -34,7 +34,6 @@ class Schedule extends Component {
     const sTime = Moment(start_time).format('h:mm a');
     const eTime = Moment(end_time).format('h:mm a');
     const data = slot_num === 1 ? this.props.slot1 : slot_num === 2 ? this.props.slot2 : this.props.slot3;
-    console.log("SLOT", slot_num)
     return (
       <SlotTable
         id={id}

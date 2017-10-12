@@ -57,6 +57,9 @@ class SlotTable extends Component {
 }
 
 const styles = {
+  contentStyle: {
+    fontSize: 18
+  },
   sectionStyle: {
     paddingTop: 10
   },

@@ -29,4 +29,5 @@ const MyApp = TabNavigator({
   }
 });
 
+console.disableYellowBox = true;
 export default MyApp;

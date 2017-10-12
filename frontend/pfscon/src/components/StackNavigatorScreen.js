@@ -9,12 +9,16 @@ const StackNavigatorScreen = StackNavigator({
       title: 'Schedule',
       headerStyle: {
         backgroundColor: "#9a9"
-      },
-      headerBackTitle: null
+      }
     }
   },
   Details: {
-    screen: DetailsScreen
+    screen: DetailsScreen,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: "#9a9"
+      }
+    }
   }
 });
 

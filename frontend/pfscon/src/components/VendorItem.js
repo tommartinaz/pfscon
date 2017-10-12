@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import {
   Text,
-  TouchableWithoutFeedback,
   View,
-  LayoutAnimation
+  TouchableOpacity,
+  Linking
 } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { StackNavigator } from 'react-navigation';
 
 import { CardSection } from './common';
 import * as actions from '../actions/scenarioActions';
-//import DetailsScreen from './DetailsScreen';
 
 class VendorItem extends Component {
 
@@ -25,9 +23,18 @@ class VendorItem extends Component {
         <View>
           <CardSection>
             <Text style={titleStyle}>
-              {title} - {url}
+              {title}
             </Text>
           </CardSection>
+          <TouchableOpacity
+            onPress={() => Linking.openURL(url)}
+          >
+          <CardSection>
+            <Text style={styles.descriptionStyle}>
+              {url}
+            </Text>
+          </CardSection>
+          </TouchableOpacity>
         </View>
     );
   }
@@ -35,12 +42,14 @@ class VendorItem extends Component {
 
 const styles = {
   titleStyle: {
-    fontSize: 18,
-    paddingLeft: 15
+    fontSize: 22,
+    paddingLeft: 15,
+    backgroundColor: '#cdc',
+    flex: 1
   },
   descriptionStyle: {
-    paddingLeft: 18,
-    fontSize: 15
+    paddingLeft: 20,
+    fontSize: 18
   }
 };
 

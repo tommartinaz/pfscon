@@ -41,7 +41,6 @@ class VendorScreen extends Component {
       <View>
       <Header text='Vendors' />
       <FlatList
-        style={styles.contentStyle}
         data={this.props.vendors}
         renderItem={this._renderItem}
         keyExtractor={this._keyExtractor}
