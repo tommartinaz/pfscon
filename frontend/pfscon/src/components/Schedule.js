@@ -25,20 +25,23 @@ class Schedule extends Component {
   componentDidMount() {
     this.props.actions.fetchSlots();
     this.props.actions.fetchScenariosSlot1();
+    this.props.actions.fetchScenariosSlot2();
+    this.props.actions.fetchScenariosSlot3();
   }
 
   _renderItem = ({ item }) => {
     const { id, slot_num, start_time, end_time } = item;
     const sTime = Moment(start_time).format('h:mm a');
     const eTime = Moment(end_time).format('h:mm a');
-    console.log("TIME", sTime)
+    const data = slot_num === 1 ? this.props.slot1 : slot_num === 2 ? this.props.slot2 : this.props.slot3;
+    console.log("SLOT", slot_num)
     return (
       <SlotTable
         id={id}
         title={slot_num}
         start_time={sTime}
         end_time={eTime}
-        slot1={this.props.slot1}
+        slot1={data}
         navigation={this.props.navigation}
       />
     );
@@ -70,6 +73,8 @@ const mapStateToProps = state => {
   return {
     slots: state.slots,
     slot1: state.slot1,
+    slot2: state.slot2,
+    slot3: state.slot3
   };
 };
 

@@ -18,7 +18,7 @@ class SlotTable extends Component {
       return (
         <FlatList
           style={styles.contentStyle}
-          data={this.props.scenarios}
+          data={this.props.slot1}
           renderItem={({item}) => {
             console.log("ITEM", item);
             return (
@@ -74,14 +74,10 @@ const styles = {
   }
 };
 
-const mapStateToProps = (state, ownProps) => {
-  return { scenarios: state.slot1 };
-};
-
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(actions, dispatch)
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SlotTable);
+export default connect(null, mapDispatchToProps)(SlotTable);
