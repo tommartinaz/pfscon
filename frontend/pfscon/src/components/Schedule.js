@@ -4,6 +4,7 @@ import { Content, Container, Text, View } from 'native-base';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { StackNavigation } from 'react-navigation';
+import Moment from 'moment';
 
 import { Header } from './common'
 import SlotTable from './SlotTable';
@@ -30,11 +31,13 @@ class Schedule extends Component {
 
   _renderItem = ({ item }) => {
     const { id, slot_num, start_time, end_time } = item;
+    const sTime = Moment('2017-10-14', start_time).format('hh:mm a');
+    console.log("TIME", sTime)
     return (
       <SlotTable
         id={id}
         title={slot_num}
-        start_time={start_time}
+        start_time={sTime}
         end_time={end_time}
         slot1={this.props.slot1}
         navigation={this.props.navigation}

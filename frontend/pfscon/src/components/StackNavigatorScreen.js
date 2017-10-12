@@ -5,7 +5,12 @@ import DetailsScreen from './DetailsScreen';
 const StackNavigatorScreen = StackNavigator({
   SList: {
     screen: Schedule,
-    headerMode: 'none'
+    navigationOptions: {
+      title: 'Schedule',
+      headerStyle: {
+        backgroundColor: "#cdc"
+      }
+    }
   },
   Details: {
     screen: DetailsScreen

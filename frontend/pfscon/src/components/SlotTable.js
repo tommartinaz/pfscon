@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import ScenarioItem from './ScenarioItem';
-import { CardSection } from './common';
+import { CardSection, Header } from './common';
 import * as actions from '../actions/slotActions';
 
 class SlotTable extends Component {
