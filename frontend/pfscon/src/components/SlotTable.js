@@ -19,7 +19,9 @@ class SlotTable extends Component {
         <FlatList
           style={styles.contentStyle}
           data={this.props.scenarios}
-          renderItem={({item}) => (
+          renderItem={({item}) => {
+            console.log("ITEM", item);
+            return (
             <ScenarioItem
               id={item.id}
               key={this.keyExtractor}
@@ -27,9 +29,12 @@ class SlotTable extends Component {
               season={item.season}
               scenario_num={item.scenario_num}
               description={item.description}
+              lowLevel = {item.low_level}
+              highLevel={item.high_level}
               navigation={this.props.navigation}
             />
           )}
+        }
           keyExtractor={(item, index) => item.id}
         />
       );
@@ -57,8 +62,10 @@ const styles = {
   },
   titleStyle: {
     fontSize: 22,
+    flex: 1,
     fontWeight: 'bold',
-    paddingLeft: 15
+    paddingLeft: 15,
+    backgroundColor: '#41affa'
   },
   descriptionStyle: {
     flex: 1,

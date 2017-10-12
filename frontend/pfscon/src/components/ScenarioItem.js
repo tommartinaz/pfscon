@@ -20,7 +20,7 @@ class ScenarioItem extends Component {
     const { id, season, scenario_num, title, actions } = this.props;
     return (
       <TouchableWithoutFeedback
-        onPress={() => this.props.navigation.navigate('Details', {description: this.props.description})}
+        onPress={() => this.props.navigation.navigate('Details', {scenario: this.props})}
       >
         <View>
           <CardSection>

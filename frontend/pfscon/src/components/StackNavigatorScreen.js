@@ -4,7 +4,8 @@ import DetailsScreen from './DetailsScreen';
 
 const StackNavigatorScreen = StackNavigator({
   SList: {
-    screen: Schedule
+    screen: Schedule,
+    headerMode: 'none'
   },
   Details: {
     screen: DetailsScreen
