@@ -27,6 +27,7 @@ class SlotTable extends Component {
               key={this.keyExtractor}
               title={item.title}
               season={item.season}
+              table_num={item.table_num}
               scenario_num={item.scenario_num}
               description={item.description}
               lowLevel = {item.low_level}

@@ -16,17 +16,22 @@ import * as actions from '../actions/scenarioActions';
 class ScenarioItem extends Component {
 
   render() {
-    const { titleStyle } = styles;
-    const { id, season, scenario_num, title, actions } = this.props;
+    const { titleStyle, tableStyle } = styles;
+    const { id, season, scenario_num, title, actions, table_num } = this.props;
     return (
       <TouchableWithoutFeedback
         onPress={() => this.props.navigation.navigate('Details', {scenario: this.props})}
       >
         <View>
+          <CardSection style={{borderBottom: 0}}>
+          <Text style={tableStyle}>
+            Table # {table_num}
+          </Text>
+          </CardSection>
           <CardSection>
-            <Text style={titleStyle}>
-              #{season}-{scenario_num}: {title}
-            </Text>
+          <Text style={titleStyle}>
+            #{season}-{scenario_num}: {title}
+          </Text>
           </CardSection>
         </View>
       </TouchableWithoutFeedback>
@@ -34,23 +39,19 @@ class ScenarioItem extends Component {
   }
 }
 
-// const ModalStack = StackNavigator({
-//     Home: {
-//       screen: ScenarioItem
-//     },
-//     Details: {
-//       screen: DetailsScreen
-//     }
-// });
-
 const styles = {
   titleStyle: {
     fontSize: 18,
-    paddingLeft: 15
+    paddingLeft: 30
   },
   descriptionStyle: {
-    paddingLeft: 18,
+    paddingLeft: 15,
     fontSize: 15
+  },
+  tableStyle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    paddingLeft: 15
   }
 };
 
