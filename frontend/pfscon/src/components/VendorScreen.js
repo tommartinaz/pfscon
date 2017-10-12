@@ -25,7 +25,6 @@ class VendorScreen extends Component {
   _keyExtractor = (item, index) => item.id;
 
   _renderItem = ({ item }) => {
-    console.log(item);
     return (
       <View>
       <VendorItem

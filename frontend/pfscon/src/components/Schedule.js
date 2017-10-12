@@ -22,7 +22,6 @@ class Schedule extends Component {
   };
 
   componentDidMount() {
-    console.log("ACTIONS", this.props.actions)
     this.props.actions.fetchSlots();
     this.props.actions.fetchScenariosSlot1();
     this.props.actions.fetchScenariosSlot2();
@@ -31,7 +30,6 @@ class Schedule extends Component {
 
   _renderItem = ({ item }) => {
     const { id, slot_num, start_time, end_time } = item;
-    console.log("ITEM", item);
     return (
       <SlotTable
         id={id}
@@ -49,7 +47,6 @@ class Schedule extends Component {
 
     return (
       <View>
-      <Header text='schedule' />
       <FlatList
           data={this.props.slots}
           renderItem={this._renderItem}

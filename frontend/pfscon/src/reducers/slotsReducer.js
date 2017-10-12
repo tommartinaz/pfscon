@@ -9,7 +9,6 @@ const INITIAL_STATE = {};
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_SLOTS_SUCCESS:
-      console.log("SLOT_REDUCER", action.payload.data)
       return action.payload.data;
     case SELECT_SLOT:
       return action.payload;

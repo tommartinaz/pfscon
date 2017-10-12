@@ -22,7 +22,8 @@ const MyApp = TabNavigator({
   tabBarPositions: 'bottom',
   animationEnabled: true,
   tabBarOptions: {
-    activeTintColor: '#e91e63'
+    activeTintColor: '#e91e63',
+    inactiveBackgroundColor: '#cdc'
   }
 });
 

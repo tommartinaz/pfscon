@@ -18,7 +18,6 @@ class ScenarioList extends Component {
   };
 
   componentDidMount() {
-    console.log("SCENARIO_LIST_PROPS", this.props)
     this.props.actions.fetchScenarios();
   }
 
