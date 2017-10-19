@@ -19,7 +19,7 @@ export const fetchScenarios = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_SCENARIOS });
 
-    axios.get('http://localhost:8000/scenarios')
+    axios.get('https://pfscon.herokuapp.com/scenarios')
       .then(data => fetchScenariosSuccess(dispatch, data))
       .catch(() => fetchScenariosFail(dispatch))
   };
@@ -42,7 +42,7 @@ export const fetchScenariosSlot1 = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_SCENARIOS_SLOT1 });
 
-    axios.get('http://localhost:8000/tables')
+    axios.get('https://pfscon.herokuapp.com/tables')
       .then(data => fetchScenariosSlot1Success(dispatch, data))
       .catch(() => fetchScenariosSlot1Fail(dispatch))
   };

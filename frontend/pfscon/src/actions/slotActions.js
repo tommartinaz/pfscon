@@ -10,7 +10,7 @@ export const fetchSlots = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_SLOTS });
 
-    axios.get('http://localhost:8000/slots')
+    axios.get('https://pfscon.herokuapp.com/slots')
       .then(data => fetchSlotsSuccess(dispatch, data))
       .catch(() => fetchSlotsFail(dispatch))
   };
