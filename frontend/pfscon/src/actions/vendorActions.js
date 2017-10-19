@@ -9,7 +9,7 @@ export const fetchVendors = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_VENDORS });
 
-    axios.get('http://localhost:8000/vendors')
+    axios.get('https://pfscon.herokuapp.com/vendors')
       .then(data => fetchVendorsSuccess(dispatch, data))
       .catch(() => fetchVendorsFail(dispatch))
   };

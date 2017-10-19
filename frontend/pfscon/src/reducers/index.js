@@ -5,8 +5,6 @@ import slotsReducer from './slotsReducer';
 import selectedScenarioReducer from './selectedScenarioReducer';
 import selectedSlotReducer from './selectedSlotReducer';
 import slot1Reducer from './slot1Reducer';
-import slot2Reducer from './slot2Reducer';
-import slot3Reducer from './slot3Reducer';
 import vendorReducer from './vendorReducer';
 
 export default combineReducers({
