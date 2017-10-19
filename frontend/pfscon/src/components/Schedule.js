@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { StackNavigation } from 'react-navigation';
 import Moment from 'moment';
 
-import { Header } from './common'
+import { Header, Spinner } from './common'
 import SlotTable from './SlotTable';
 import * as actions from '../actions/slotActions';
 import * as scenarioActions from '../actions/scenarioActions';
@@ -25,22 +25,22 @@ class Schedule extends Component {
   componentDidMount() {
     this.props.actions.fetchSlots();
     this.props.actions.fetchScenariosSlot1();
-    this.props.actions.fetchScenariosSlot2();
-    this.props.actions.fetchScenariosSlot3();
+    // this.props.actions.fetchScenariosSlot2();
+    // this.props.actions.fetchScenariosSlot3();
   }
 
   _renderItem = ({ item }) => {
     const { id, slot_num, start_time, end_time } = item;
     const sTime = Moment(start_time).format('h:mm a');
     const eTime = Moment(end_time).format('h:mm a');
-    const data = slot_num === 1 ? this.props.slot1 : slot_num === 2 ? this.props.slot2 : this.props.slot3;
+    const data = this.props.slot.scenarios.filter(table => table.slot === slot_num);
     return (
       <SlotTable
         id={id}
         title={slot_num}
         start_time={sTime}
         end_time={eTime}
-        slot1={data}
+        table={data}
         navigation={this.props.navigation}
       />
     );
@@ -48,16 +48,19 @@ class Schedule extends Component {
 
   keyExtractor = (item, index) => item.id
   render() {
-
-    return (
-      <View>
-      <FlatList
-          data={this.props.slots}
-          renderItem={this._renderItem}
-          keyExtractor={this.keyExtractor}
-        />
-      </View>
-    );
+    if (this.props.slot.scenarios) {
+      return (
+        <View>
+        <FlatList
+            data={this.props.slots}
+            renderItem={this._renderItem}
+            keyExtractor={this.keyExtractor}
+          />
+        </View>
+      );
+    } else {
+      return <Spinner size='large' />;
+    }
   }
 }
 
@@ -71,9 +74,7 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => {
   return {
     slots: state.slots,
-    slot1: state.slot1,
-    slot2: state.slot2,
-    slot3: state.slot3
+    slot: state.slot,
   };
 };
 

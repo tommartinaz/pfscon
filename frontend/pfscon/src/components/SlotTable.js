@@ -18,9 +18,8 @@ class SlotTable extends Component {
       return (
         <FlatList
           style={styles.contentStyle}
-          data={this.props.slot1}
+          data={this.props.table}
           renderItem={({item}) => {
-            console.log("ITEM", item);
             return (
             <ScenarioItem
               id={item.id}

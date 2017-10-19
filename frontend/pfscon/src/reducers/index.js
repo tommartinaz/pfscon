@@ -15,8 +15,6 @@ export default combineReducers({
   slots: slotsReducer,
   selectedScenarioId: selectedScenarioReducer,
   selectedSlotId: selectedSlotReducer,
-  slot1: slot1Reducer,
-  slot2: slot2Reducer,
-  slot3: slot3Reducer,
+  slot: slot1Reducer,
   vendors: vendorReducer
 });

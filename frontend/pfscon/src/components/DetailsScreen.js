@@ -5,7 +5,6 @@ import { CardSection } from './common';
 
 class DetailsScreen extends Component {
   render() {
-    console.log(this.props)
     const {
       description,
       title,
