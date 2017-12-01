@@ -3,13 +3,14 @@ import {
   FETCH_VENDORS,
   FETCH_VENDORS_SUCCESS,
   FETCH_VENDORS_FAIL,
+  BASE_URL
 } from './types';
 
 export const fetchVendors = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_VENDORS });
 
-    axios.get('https://pfscon.herokuapp.com/vendors')
+    axios.get(`${BASE_URL}/vendors`)
       .then(data => fetchVendorsSuccess(dispatch, data))
       .catch(() => fetchVendorsFail(dispatch))
   };

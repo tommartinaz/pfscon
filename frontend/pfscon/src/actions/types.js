@@ -23,3 +23,4 @@ export const FETCH_SCENARIOS_SLOT3_FAIL = 'fetch_scenarios_slot3_fail';
 export const FETCH_VENDORS = 'fetch_vendors';
 export const FETCH_VENDORS_SUCCESS = 'fetch_vendors_success';
 export const FETCH_VENDORS_FAIL = 'fetch_vendors_fail';
+export const BASE_URL = 'http://localhost:8000';

@@ -12,14 +12,14 @@ import {
   FETCH_SCENARIOS_SLOT3,
   FETCH_SCENARIOS_SLOT3_SUCCESS,
   FETCH_SCENARIOS_SLOT3_FAIL,
-  SELECT_SCENARIO
+  SELECT_SCENARIO, BASE_URL
 } from './types';
 
 export const fetchScenarios = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_SCENARIOS });
 
-    axios.get('https://pfscon.herokuapp.com/scenarios')
+    axios.get(`${BASE_URL}/scenarios`)
       .then(data => fetchScenariosSuccess(dispatch, data))
       .catch(() => fetchScenariosFail(dispatch))
   };
@@ -42,7 +42,7 @@ export const fetchScenariosSlot1 = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_SCENARIOS_SLOT1 });
 
-    axios.get('https://pfscon.herokuapp.com/tables')
+    axios.get(`${BASE_URL}/tables`)
       .then(data => fetchScenariosSlot1Success(dispatch, data))
       .catch(() => fetchScenariosSlot1Fail(dispatch))
   };

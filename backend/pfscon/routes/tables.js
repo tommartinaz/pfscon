@@ -39,5 +39,4 @@ router.get('/:id', (req, res) => {
         .then(data => res.send(data.rows));
 });
 
-
 module.exports = router;

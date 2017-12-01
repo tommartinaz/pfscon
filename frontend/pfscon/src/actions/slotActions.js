@@ -3,14 +3,15 @@ import {
   FETCH_SLOTS,
   FETCH_SLOTS_SUCCESS,
   FETCH_SLOTS_FAIL,
-  SELECT_SLOT
+  SELECT_SLOT,
+  BASE_URL
 } from './types';
 
 export const fetchSlots = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_SLOTS });
 
-    axios.get('https://pfscon.herokuapp.com/slots')
+    axios.get(`${BASE_URL}/slots`)
       .then(data => fetchSlotsSuccess(dispatch, data))
       .catch(() => fetchSlotsFail(dispatch))
   };
